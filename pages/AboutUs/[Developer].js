@@ -1,9 +1,12 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 
+
 const AboutName = () => {
   const router = useRouter()
-  const details = [  { id : 1, name: 'Yash', role: 'Senior Developer'},{ id : 2, name: 'Vaibhav', role: 'Backend Developer'},{ id : 3, name: 'Suresh', role: 'Frontend Developer'}]
+  const details = [  { id : 1, name: 'Yash', role: 'Senior Developer'},
+  { id : 2, name: 'Vaibhav', role: 'Backend Developer'},
+  { id : 3, name: 'Suresh', role: 'Frontend Developer'}]
    let data;
   if(router.query.Developer){
     data = details.find(item => item.id == router.query.Developer) 
@@ -12,7 +15,7 @@ const AboutName = () => {
   console.log(typeof(router.query.Developer))
   return (
   <>
-  {data && <p>{data.name}</p>}
+  {data && <p>{data.name} --- {data.role}</p>}
   </>
   )
 }
